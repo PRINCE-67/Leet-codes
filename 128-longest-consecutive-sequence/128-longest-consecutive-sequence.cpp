@@ -8,13 +8,19 @@ public:
             s.insert(nums[i]);
         }
         if(n == 0) return 0;
-        int cnt=1,mxcnt=1;
+        if(n==1)return 1;
+        int cnt=1,mxcnt=1,prev=nums[0];
         for(auto x:s){
-            if(s.count(x+1) == 1) cnt++;
-            else{
+            //cout<<prev<<x<<endl;
+            if(x-prev == 1) 
+            {
+                cnt++;
                 mxcnt=max(mxcnt,cnt);
+            }
+            else{
                 cnt=1;
             }
+            prev=x;
         }
         return mxcnt;
     }
