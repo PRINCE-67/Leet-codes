@@ -19,7 +19,7 @@ public:
         
        if(left==-1 || right == -1)
            return -1;
-        else if(abs(left-right)>1) return -1;
+        if(abs(left-right)>1) return -1;
         return max(left,right)+1;
     }
     bool isBalanced(TreeNode* root) {
@@ -30,7 +30,7 @@ public:
         
         
         if(lt == -1 || rt == -1) return false;
-        else if(abs(lt-rt)>1) return false;
+        if(abs(lt-rt)>1) return false;
         return true;
         
     }
