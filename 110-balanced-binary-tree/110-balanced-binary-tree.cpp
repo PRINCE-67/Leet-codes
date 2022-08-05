@@ -19,19 +19,20 @@ public:
         
        if(left==-1 || right == -1)
            return -1;
-        if(abs(left-right)>1) return -1;
+        
+        if(abs(left-right)>1) 
+            return -1;
+        
         return max(left,right)+1;
     }
     bool isBalanced(TreeNode* root) {
-        if(root == NULL) return true;
         
-        int lt=ht(root->left);
-        int rt=ht(root->right);
+        int check=ht(root);
         
-        
-        if(lt == -1 || rt == -1) return false;
-        if(abs(lt-rt)>1) return false;
+        if(check != -1)
         return true;
+        else 
+            return false;
         
     }
 };
