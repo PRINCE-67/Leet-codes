@@ -28,7 +28,6 @@ public:
         if(l!=NULL || r==NULL){
             return l;
         }
-        
         return NULL;
     }
 };
