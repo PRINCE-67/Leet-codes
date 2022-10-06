@@ -18,10 +18,11 @@ public:
         
         if(root == q || root == p) return root;
         
-        if(l ==NULL)
+        if(l ==NULL && r!=NULL)
             return r;
-        if(r==NULL)
+        if(r==NULL && l!=NULL)
             return l;
+        if(l == NULL && r==NULL) return NULL;
         
         return root;
     }
