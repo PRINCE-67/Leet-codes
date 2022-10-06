@@ -23,15 +23,9 @@ public:
         if(root == p || root == q) return root;
         
         if(l==NULL || r!=NULL){
-            if(root == p || root == q){
-                return root;
-            }
             return r;
         }
         if(l!=NULL || r==NULL){
-            if(root == p || root == q){
-                return root;
-            }
             return l;
         }
         
