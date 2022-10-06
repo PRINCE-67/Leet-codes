@@ -8,30 +8,6 @@
  * };
  */
 class Solution {
-    private:
-    bool lca(TreeNode* root, TreeNode* p, TreeNode* q,TreeNode* temp){
-        
-        if(root == NULL) return false;
-        
-        bool l=lca(root->left,p,q,temp);
-        bool r=lca(root->right,p,q,temp);
-        
-        
-        if(l== true && r == true){
-            temp=root;
-            return true;
-        }
-        if(l==true || r==true){
-            if(root == p || root == q){
-                temp=root;
-            }
-            return true;
-        }
-        if( l == false && r== false){
-            if(root == p || root==q) return true;
-        }
-        return false;
-    }
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
         if(root == NULL) return NULL;
@@ -43,6 +19,8 @@ public:
         
         
         if(l!=NULL && r!=NULL) return root;
+        
+        if(root == p || root == q) return root;
         
         if(l==NULL || r!=NULL){
             if(root == p || root == q){
