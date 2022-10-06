@@ -22,10 +22,10 @@ public:
         
         if(root == p || root == q) return root;
         
-        if(l==NULL || r!=NULL){
+        if(l==NULL && r!=NULL){
             return r;
         }
-        if(l!=NULL || r==NULL){
+        if(l!=NULL && r==NULL){
             return l;
         }
         return NULL;
