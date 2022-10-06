@@ -40,7 +40,7 @@ public:
         TreeNode* l=lowestCommonAncestor(root->left,p,q);
         TreeNode* r=lowestCommonAncestor(root->right,p,q);
         
-        if(root == p || root == q) return root;
+        
         
         if(l!=NULL && r!=NULL) return root;
         
